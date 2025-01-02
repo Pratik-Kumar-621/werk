@@ -1,0 +1,25 @@
+:root {
+}
+
+/*###> custom ###*/
+.partial_usp_grid-item{--usp-color:#FFF !important;}
+.partial_usp_grid-item.grid-area-a{--usp-color:#404041 !important;}
+
+.page_vacancy-detail .partial_usp_list-item{
+color: #404041 !important;
+}
+.pagewrapper .page.is-margin-top-100 .container{
+height: unset;
+transform: none;
+}
+.is-section .is-boxes{
+float: inline-start;
+}
+
+footer .footercolumn ul li a .badge-float { position: relative; right: auto !important;}
+
+.component_logo-slider .slick-slide > div .logo img {
+  max-width: 175px;
+  max-height: 80px;
+}
+/*###< custom ###*/

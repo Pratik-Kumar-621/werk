@@ -1,0 +1,72 @@
+(function (d, w) {
+  var script, config, container, style;
+  var embedUuid = '19222dbe8130336dff240af815735ad4';
+
+  function mergeDeep(target, source) {
+    if (typeof target == "object" && typeof source == "object") {
+      for (var key in source) {
+        if (source[key] === null && (target[key] === undefined || target[key] === null)) {
+          target[key] = null;
+        } else if (source[key] instanceof Array) {
+          target[key] = source[key];
+        } else if (typeof source[key] == "object" && source[key] !== null) {
+          if (!target[key]) target[key] = {};
+          mergeDeep(target[key], source[key]);
+        } else {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  }
+
+  function merge(target, source) {
+    return mergeDeep(mergeDeep({}, target), source);
+  }
+
+  w.flcklr = w.flcklr || {};
+
+  w._flocklerEditVersion = null;
+
+  w._flocklerOverride = w._flocklerOverride || {};
+  w.flcklr.EmbedConfigs = w.flcklr.EmbedConfigs || {};
+  w.flcklr.EmbedConfigs[embedUuid] = merge({"embedUuid":"19222dbe8130336dff240af815735ad4","embedVersion":"v3","container":"flockler-embed-19222dbe8130336dff240af815735ad4","section":[85888],"site":31359,"style":"carousel_v2","count":15,"defaultCss":true,"defaultJs":true,"extra":{"wall_timestamps":true,"wall_timestamps_format":"relative","popup":true,"carousel_autoplay":true},"locale":"nl","refresh":0,"showLikes":1,"showComments":1,"showRetweets":1,"showProfile":true}, w._flocklerOverride[embedUuid]);
+
+    w.flcklr.EmbedConfigsV3 = w.flcklr.EmbedConfigsV3 || {};
+    w.flcklr.EmbedConfigsV3[embedUuid] = {"embedUuid":"19222dbe8130336dff240af815735ad4","embedVersion":"v3","siteUuid":"18eec8a836005b18132ec30c40260cd6","configuration":{"count":15,"locale":"nl","filters":{"filterBySectionIds":[85888],"filterByTags":[],"filterByChannels":[],"tagFilterType":"any","filterByProductIds":[],"filterByProductCategoryIds":[],"filterByProductFeedIds":[],"filterByFallbacks":null},"localizations":{"relativeTime":{"seconds":{"singular":"# sec. geleden","plural":"# sec. geleden"},"minutes":{"singular":"# min. geleden","plural":"# min. geleden"},"hours":{"singular":"# u. geleden","plural":"# u. geleden"},"days":{"singular":"# dag geleden","plural":"# dagen geleden"},"weeks":{"singular":"# wk. geleden","plural":"# wk. geleden"},"months":{"singular":"# ma. geleden","plural":"# ma. geleden"},"years":{"singular":"# jr. geleden","plural":"# jr. geleden"}},"actions":{"buyNow":"Shop nu","next":"Volgende","previous":"Vorig","tapToPlay":"Tik om af te spelen","viewProducts":"Producten bekijken","showMore":"Toon meer…","loadMorePosts":"Meer posts laden","showNewerPosts":"Toon nieuwere berichten"},"help":{"noAltText":"Geen fotobeschrijving beschikbaar.","playVideo":"Video afspelen","anonymous":"Anonymous","recommends":"Raadt %{page_name} aan","doesNotRecommend":"Raadt %{page_name} niet aan","seeOriginalPost":"Origineel bericht bekijken","seePostOn":"Origineel bericht bekijken op %{channel}","seeProfileOf":"Bekijk profielpagina van %{user}","profilePictureOf":"Profielfoto van %{user}","openInPopupView":"Open in popup view","opensInANewWindow":"Opent in een nieuw venster","readMoreNotice":"(enlarge visible text above – no impact for screenreader users)"},"postLabels":{"facebook":"Een Facebook-post","flickr":"Een Flickr-post","flockler":"Een bericht","fromUser":"van %{user}","google_review":"Google-recensie","instagram":"Een Instagram-post","linkedin":"Een LinkedIn-post","pinterest":"Een Pinterest-post","reddit":"Een Reddit-post","review":"Review","rss":"Een post van RSS feed","soundcloud":"Een post van Soundcloud","tiktok":"Een TikTok-post","twitter":"Een Twitter-post","video":"Een videopost","vimeo":"Een Vimeo-video","youtube":"Een YouTube-video"},"stats":{"commentsLabelSingular":"%{count} reactie","commentsLabelPlural":"%{count} reacties","likesLabelSingular":"%{count} like","likesLabelPlural":"%{count} likes","retweetsLabelSingular":"%{count} retweet","retweetsLabelPlural":"%{count} retweets","facebookLikeReactionsSingular":"iemand heeft gereageerd met Leuk","facebookLikeReactionsPlural":"mensen hebben gereageerd met Leuk","facebookLoveReactionsSingular":"iemand heeft gereageerd met Geweldig","facebookLoveReactionsPlural":"mensen hebben gereageerd met Geweldig","facebookHahaReactionsSingular":"iemand heeft gereageerd met Grappig","facebookHahaReactionsPlural":"mensen hebben gereageerd met Grappig","facebookWowReactionsSingular":"iemand heeft gereageerd met Verbluft","facebookWowReactionsPlural":"mensen hebben gereageerd met Verbluft","facebookSadReactionsSingular":"iemand heeft gereageerd met Verdrietig","facebookSadReactionsPlural":"mensen hebben gereageerd met Verdrietig","facebookAngryReactionsSingular":"iemand heeft gereageerd met Boos","facebookAngryReactionsPlural":"mensen hebben gereageerd met Boos"}},"theme":{"name":"carousel_v2","elements":{"profileDetails":true,"captions":true,"publishedAt":true,"publishedAtFormat":"relative","stats":{"likeCount":true,"commentCount":true,"retweetCount":true},"products":true},"features":{"popup":true,"infiniteScroll":false,"randomize":false,"autoRefresh":{"type":"none","intervalInSeconds":0},"animation":{"type":"none","intervalInSeconds":0},"emojiFallback":false,"embedScreen":false,"carouselAutoplay":true,"styleVariant":"tiles"},"text":{"loadMoreText":"Meer posts laden","showMoreText":"Toon meer…"},"customization":{"css":null,"ctaLink":{"defaultText":null,"backgroundColor":null,"textColor":null,"icon":null,"utmSource":null,"utmMedium":null,"utmCampaign":null}}}}};
+
+
+    style = d.createElement('style');
+    style.setAttribute('data-flockler-embed-id', embedUuid);
+    style.textContent = '';
+    style.textContent += '#flockler-embed-19222dbe8130336dff240af815735ad4 { --fl-preview-background:#ffffff;--fl-item-background:#ffffff;--fl-text-color:#111111;--fl-link-color:#111111;--fl-link-color-hover:#1771e0 }';
+
+    document.head.insertAdjacentElement('beforeend', style);
+
+    container = d.getElementById('flockler-embed-' + embedUuid);
+    if (!container) return;
+
+      if (w.flcklr && w.flcklr.Embeds && w.flcklr.Embeds.versions && w.flcklr.Embeds.versions.v3 && w.flcklr.Embeds.versions.v3['__carousel_v2']) {
+        w.flcklr.Embeds.create(w.flcklr.EmbedConfigs[embedUuid]);
+        return;
+      }
+
+      w.flcklr.EmbedsToAutoload = w.flcklr.EmbedsToAutoload || [];
+      w.flcklr.EmbedsToAutoload.push({ embedUuid: embedUuid });
+
+    if (!(w.flcklr.embedJsV3HasBeenAddedToDOM || {})['carousel_v2']) {
+      script = d.createElement('script');
+        script.async = true;
+
+        script.src = "https://plugins.flockler.com/embed/v3/embed-carousel_v2.js";
+
+
+      (d.head || d.body).insertAdjacentElement('beforeend', script);
+      w.flcklr.embedJsV3HasBeenAddedToDOM = w.flcklr.embedJsV3HasBeenAddedToDOM || {};
+      w.flcklr.embedJsV3HasBeenAddedToDOM['carousel_v2'] = true;
+
+      if ( console && console.log ) {
+        console.log('🟦 Social Plugin powered by Flockler — Learn more at flockler.com');
+      }
+    }
+})(document, window);
